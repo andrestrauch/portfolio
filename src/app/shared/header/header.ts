@@ -1,9 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  imports: [],
+  imports: [TranslatePipe],
   selector: 'app-header',
   styleUrl: './header.scss',
   templateUrl: './header.html',
 })
-export class Header {}
+export class Header {
+  private translate = inject(TranslateService);
+
+  ngOnInit() {
+    document.getElementById('enBtn')?.classList.add(`active`);
+  }
+
+  changeLanguage(language: string): void {
+    this.translate.use(language);
+    if (language == 'de') {
+      document.getElementById('enBtn')?.classList.remove(`active`);
+      document.getElementById('deBtn')?.classList.add(`active`);
+    }
+
+    if (language == 'en') {
+      document.getElementById('deBtn')?.classList.remove(`active`);
+      document.getElementById('enBtn')?.classList.add(`active`);
+    }
+  }
+}

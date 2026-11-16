@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { Hero } from '../hero/hero';
+import { Header } from '../../shared/header/header';
+import { Content } from '../content/content';
 
 @Component({
-  imports: [],
+  imports: [Hero, Header, Content],
   selector: 'app-mainpage',
   styleUrl: './mainpage.scss',
   templateUrl: './mainpage.html',
