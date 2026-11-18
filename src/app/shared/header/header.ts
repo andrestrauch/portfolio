@@ -11,19 +11,19 @@ export class Header {
   private translate = inject(TranslateService);
 
   ngOnInit() {
-    document.getElementById('enBtn')?.classList.add(`active`);
+    // document.getElementById('enBtn')?.classList.add('active');
   }
 
   changeLanguage(language: string): void {
     this.translate.use(language);
     if (language == 'de') {
-      document.getElementById('enBtn')?.classList.remove(`active`);
-      document.getElementById('deBtn')?.classList.add(`active`);
+      document.getElementById('enBtn')?.classList.remove('active');
+      document.getElementById('deBtn')?.classList.add('active');
     }
 
     if (language == 'en') {
-      document.getElementById('deBtn')?.classList.remove(`active`);
-      document.getElementById('enBtn')?.classList.add(`active`);
+      document.getElementById('deBtn')?.classList.remove('active');
+      document.getElementById('enBtn')?.classList.add('active');
     }
   }
 }
