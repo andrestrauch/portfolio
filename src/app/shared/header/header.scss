@@ -54,66 +54,60 @@
   }
 
   .lang-btn {
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    display: flex;
     border: none;
+    color: #262e34;
+    gap: 2px;
 
-    span {
-      color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2px;
-      background-color: rgba(137, 188, 217, 1);
-      border: none;
-
-      p {
-        font-size: 18px;
-        font-weight: 400;
-        font-weight: bold;
-        line-height: 120%;
-        border-radius: 50%;
-      }
-
-      button {
-        background-color: rgba(137, 188, 217, 1);
-        border: none;
-        border-radius: 50%;
-        padding: 6px;
-      }
-
-      .active {
-        background-color: rgba(38, 46, 52, 0.12);
-      }
-
-      .de {
-        color: black;
-      }
-
-      .en {
-        color: white;
-      }
-
-      .de:hover {
-        color: white;
-      }
-
-      .en:hover {
-        color: black;
-      }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      font-weight: bold;
+      line-height: 120%;
+      border-radius: 50%;
     }
 
-    .mode-toggle {
-      border: none;
-      padding: 4px;
-      width: 100px;
-      border-radius: 30px;
-      cursor: pointer;
-      position: relative;
+    button {
       background-color: rgba(137, 188, 217, 1);
+      border: none;
+      border-radius: 50%;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    &:has(.de-active:hover) .en {
+      color: #f8f5ec;
+    }
+
+    &:has(.en-active:hover) .de {
+      color: #f8f5ec;
+    }
+
+    &:has(.de:hover) .en-active {
+      color: #262e34;
+    }
+
+    &:has(.en:hover) .de-active {
+      color: #262e34;
+    }
+
+    .de:hover,
+    .en:hover {
+      color: #f8f5ec;
+    }
+
+    .de-active,
+    .en-active {
+      background-color: rgba(38, 46, 52, 0.12);
+
+      color: #f8f5ec;
+
+      &:hover {
+        color: #262e34;
+      }
     }
   }
 }

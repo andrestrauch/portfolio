@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,6 +10,8 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class Header {
   private translate = inject(TranslateService);
 
+  lang = signal('en');
+
   ngOnInit() {
     // document.getElementById('enBtn')?.classList.add('active');
   }
@@ -17,13 +19,11 @@ export class Header {
   changeLanguage(language: string): void {
     this.translate.use(language);
     if (language == 'de') {
-      document.getElementById('enBtn')?.classList.remove('active');
-      document.getElementById('deBtn')?.classList.add('active');
+      this.lang.set('de');
     }
 
     if (language == 'en') {
-      document.getElementById('deBtn')?.classList.remove('active');
-      document.getElementById('enBtn')?.classList.add('active');
+      this.lang.set('en');
     }
   }
 }

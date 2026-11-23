@@ -23,12 +23,21 @@
     </section>
 
     <section class="lang-btn">
-      <button id="langToggle" class="mode-toggle">
-        <span>
-          <button id="deBtn" (click)="changeLanguage('de')"><p class="de">DE</p></button>
-          <button id="enBtn" (click)="changeLanguage('en')"><p class="en">ENG</p></button>
-        </span>
-      </button>
+      <!-- <button id="langToggle" class="mode-toggle"> -->
+      <!-- <span> -->
+      @if (lang() == 'de') {
+        <button class="de-active"><p>DE</p></button>
+      } @else {
+        <button class="de" (click)="changeLanguage('de')"><p>DE</p></button>
+      }
+
+      @if (lang() == 'en') {
+        <button class="en-active"><p>ENG</p></button>
+      } @else {
+        <button class="en" (click)="changeLanguage('en')"><p>ENG</p></button>
+      }
+      <!-- </span> -->
+      <!-- </button> -->
     </section>
   </div>
 </section>
