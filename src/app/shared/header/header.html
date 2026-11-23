@@ -1,11 +1,13 @@
 <section class="header">
-  <!-- <p>header works!</p> -->
   <div class="content-wrapper">
     <section class="logo">
-      <img src="assets/icon/logo2.png" alt="Logo" />
-      <p class="white">A.Strauch</p>
-      <p>developer</p>
+      <a href="">
+        <img src="assets/icon/logo2.png" alt="Logo" />
+        <p class="white">A.Strauch</p>
+        <p>developer</p>
+      </a>
     </section>
+
     <section class="nav">
       <a href="#whyMeSection">
         <p>{{ 'header-whyMe' | translate }}</p>
@@ -23,8 +25,6 @@
     </section>
 
     <section class="lang-btn">
-      <!-- <button id="langToggle" class="mode-toggle"> -->
-      <!-- <span> -->
       @if (lang() == 'de') {
         <button class="de-active"><p>DE</p></button>
       } @else {
@@ -36,8 +36,6 @@
       } @else {
         <button class="en" (click)="changeLanguage('en')"><p>ENG</p></button>
       }
-      <!-- </span> -->
-      <!-- </button> -->
     </section>
   </div>
 </section>
