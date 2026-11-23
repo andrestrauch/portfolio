@@ -10,6 +10,7 @@
       <div ngTab value="ideas">{{ 'content-projectIdeas' | translate }}</div>
     </div>
     <div class="sliding-window">
+      <!--  Start El Pollo Loco Bereich-->
       <div ngTabPanel [preserveContent]="true" value="elPolloLoco">
         <ng-template ngTabContent>
           <section class="project-content">
@@ -62,13 +63,60 @@
           </section>
         </ng-template>
       </div>
+      <!--  Ende El Pollo Loco Bereich-->
+
+      <!--  Start Join Bereich-->
       <div ngTabPanel [preserveContent]="true" value="join">
         <ng-template ngTabContent>
           <section class="project-content">
-            <div class="project-wrapper">Daten folgen</div>
+            <div class="project-wrapper">
+              <section class="text">
+                <div class="about">
+                  <img src="assets/icon/small_circle.png" alt="Blauer Kreis" />
+                  <h3>{{ 'content-projectsAbout' | translate }}</h3>
+                </div>
+                <p>{{ 'content-projectsAboutText2' | translate }}</p>
+
+                <div class="about">
+                  <img src="assets/icon/small_circle.png" alt="Blauer Kreis" />
+                  <h3>{{ 'content-projectsOrganized' | translate }}</h3>
+                </div>
+                <p>{{ 'content-projectsOrganizedText2' | translate }}</p>
+
+                <div class="about">
+                  <img src="assets/icon/small_circle.png" alt="Blauer Kreis" />
+                  <h3>{{ 'content-projectsExp' | translate }}</h3>
+                </div>
+                <p>{{ 'content-projectsExp-Text2' | translate }}</p>
+              </section>
+              <section class="projects">
+                <h4>Technologies</h4>
+                <div class="tech-icons">
+                  <img src="assets/icon/angular2.png" alt="Angular" />
+                  <img src="assets/icon/supabase2.png" alt="Supabase" />
+                  <img src="assets/icon/ts2.png" alt="TS" />
+                  <img src="assets/icon/html2.png" alt="HTML" />
+                  <img src="assets/icon/css2.png" alt="SCSS" />
+                </div>
+
+                <img class="game-img" src="assets/img/join.png" alt="El Pollo Loco" />
+
+                <div class="project-btn">
+                  <button class="test-btn btn">
+                    <a href="https://join-3286.developerakademie.net/" target="_blank">Live Test</a>
+                  </button>
+                  <button class="github-btn btn">
+                    <a href="https://github.com/ogzA/join-team" target="_blank">GitHub</a>
+                  </button>
+                </div>
+              </section>
+            </div>
           </section>
         </ng-template>
       </div>
+      <!--  Ende Join Bereich-->
+
+      <!--  Start Ideas Bereich-->
       <div ngTabPanel [preserveContent]="true" value="ideas">
         <ng-template ngTabContent>
           <section class="project-content">
@@ -76,6 +124,7 @@
           </section>
         </ng-template>
       </div>
+      <!--  Ende Ideas Bereich-->
     </div>
   </div>
 </section>
